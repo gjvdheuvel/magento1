@@ -72,6 +72,9 @@ window.mypa.settings = {};
                             });
                             parent.iframeDataLoaded();
 
+                            setTimeout(function(){
+                                $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
+                            }, 3000);
                         });
                     } else {
                         console.log('Adres niet gevonden (API request mislukt).')
