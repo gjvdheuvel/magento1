@@ -72,6 +72,7 @@ window.mypa.settings = {};
                             });
                             parent.iframeDataLoaded();
 
+                            $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
                             setTimeout(function(){
                                 $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
                             }, 3000);
