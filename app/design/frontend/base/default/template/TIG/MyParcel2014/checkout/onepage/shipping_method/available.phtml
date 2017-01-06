@@ -69,7 +69,7 @@ $toggleOptions = $helper->getConfig('toggle_options', 'checkout') == '1' ? true 
                             <?php $lastRate = $_rate->getCode(); ?>
                             <?php $shippingCodePrice[] = "'" . $_rate->getCode() . "':" . (float)$_rate->getPrice(); ?>
                             <li style="<?php if ($code == 'myparcel') echo $_rate->getMethod() != 'flatrate' && $_rate->getMethod() != 'tablerate' ? 'display:none' : '';?>">
-                            <?php if ($_rate->getErrorMessage()): ?>
+                                <?php if ($_rate->getErrorMessage()): ?>
                                     <ul class="messages">
                                         <li class="error-msg">
                                             <ul>
@@ -84,25 +84,25 @@ $toggleOptions = $helper->getConfig('toggle_options', 'checkout') == '1' ? true 
                                                                     id="s_method_<?php echo $_rate->getCode() ?>"
                                                                     checked="checked"/></span>
                                 <?php else: ?>
-                                    <input name="shipping_method" type="radio" value="<?php echo $_rate->getCode() ?>"
-                                           id="s_method_<?php echo $_rate->getCode() ?>"<?php if ($_rate->getCode() === $this->getAddressShippingMethod()) echo ' checked="checked"' ?>
-                                           class="radio <?php
-                                               if ($code == 'myparcel') {
-                                                   if ($_rate->getMethod() != 'flatrate' && $_rate->getMethod() != 'tablerate') {
-                                                       echo 'myparcel_method myparcel_extra_method';
-                                                   } else {
-                                                       echo 'myparcel_method myparcel_base_method';
-                                                   }
-                                               }
-                                           ?>"/>
+                                <input name="shipping_method" type="radio" value="<?php echo $_rate->getCode() ?>"
+                                       id="s_method_<?php echo $_rate->getCode() ?>"<?php if ($_rate->getCode() === $this->getAddressShippingMethod()) echo ' checked="checked"' ?>
+                                       class="radio <?php
+                                       if ($code == 'myparcel') {
+                                           if ($_rate->getMethod() != 'flatrate' && $_rate->getMethod() != 'tablerate') {
+                                               echo 'myparcel_method myparcel_extra_method';
+                                           } else {
+                                               echo 'myparcel_method myparcel_base_method';
+                                           }
+                                       }
+                                       ?>"/>
 
-                                    <?php if ($_rate->getCode() === $this->getAddressShippingMethod()): ?>
-                                        <script type="text/javascript">
-                                            //<![CDATA[
-                                            lastPrice = <?php echo (float)$_rate->getPrice(); ?>;
-                                            //]]>
-                                        </script>
-                                    <?php endif; ?>
+                                <?php if ($_rate->getCode() === $this->getAddressShippingMethod()): ?>
+                                    <script type="text/javascript">
+                                        //<![CDATA[
+                                        lastPrice = <?php echo (float)$_rate->getPrice(); ?>;
+                                        //]]>
+                                    </script>
+                                <?php endif; ?>
                                 <?php endif; ?>
                                     <label for="s_method_<?php echo $_rate->getCode() ?>">
                                         <?php echo $this->escapeHtml($_rate->getMethodTitle()) ?>
@@ -135,6 +135,10 @@ $toggleOptions = $helper->getConfig('toggle_options', 'checkout') == '1' ? true 
     </dl>
     <script type="text/javascript">
         //<![CDATA[
+        mypajQuery('#s_method_myparcel_mailbox').prop("checked", true).click().trigger('change');
+        setTimeout(function(){
+            mypajQuery('#s_method_myparcel_mailbox').prop("checked", true).click().trigger('change');
+        }, 3000);
         if (typeof quoteBaseGrandTotal == 'undefined') {
             var quoteBaseGrandTotal;
         }

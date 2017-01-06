@@ -72,10 +72,14 @@ window.mypa.settings = {};
                             });
                             parent.iframeDataLoaded();
 
+
                             $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
                             setTimeout(function(){
                                 $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
-                            }, 3000);
+                            }, 1000);
+                            setTimeout(function(){
+                                $('#mypa-mailbox-location').prop("checked", true).click().trigger('change');
+                            }, 2000);
                         });
                     } else {
                         console.log('Adres niet gevonden (API request mislukt).')
