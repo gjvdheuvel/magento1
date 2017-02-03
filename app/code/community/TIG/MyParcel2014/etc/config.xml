@@ -36,7 +36,7 @@
             </tig_myparcel>
             <adminhtml>
                 <rewrite>
-                    <sales_order_grid>TIG_MyParcel2014_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                    <!--<sales_order_grid>TIG_MyParcel2014_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>-->
                     <sales_shipment_grid>TIG_MyParcel2014_Block_Adminhtml_Sales_Shipment_Grid</sales_shipment_grid>
                 </rewrite>
             </adminhtml>
@@ -136,11 +136,11 @@
             <adminhtml_block_html_before>
                 <observers>
                     <!-- Adds a massaction the grid that allows merchants to print shipping labels for selected orders-->
-                    <tig_myparcel_adminhtml_ordergrid>
+                    <!--<tig_myparcel_adminhtml_ordergrid>
                         <type>singleton</type>
                         <class>tig_myparcel/adminhtml_observer_orderGrid</class>
                         <method>modifyGrid</method>
-                    </tig_myparcel_adminhtml_ordergrid>
+                    </tig_myparcel_adminhtml_ordergrid>-->
                     <!-- Adds a column with shipping status to the shipment grid -->
                     <tig_myparcel_adminhtml_shipmentgrid>
                         <type>singleton</type>

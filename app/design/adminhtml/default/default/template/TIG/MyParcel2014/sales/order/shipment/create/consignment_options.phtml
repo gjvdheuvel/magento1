@@ -76,9 +76,10 @@ if(true == $_isPakjegemak){
 <div id="tig_myparcel_consignment_options">
     <p>
         <label for="tig_myparcel_create_consignment" class="normal"><strong>Maak MyParcel zending aan</strong></label>
-        <input id="tig_myparcel_create_consignment" type="checkbox" value="1" name="tig_myparcel[create_consignment]" checked="true" />
+<!--        <input id="tig_myparcel_create_consignment" type="checkbox" value="1" name="tig_myparcel[create_consignment]" checked="true" />-->
+        <input id="tig_myparcel_create_consignment" type="checkbox" value="1" name="tig_myparcel[create_consignment]" />
     </p>
-    <div id="tig_myparcel_form_container">
+    <div id="tig_myparcel_form_container" style="display: none;">
             <p>
                 <label for="tig_myparcel_shipment_type" class="normal" ><?php echo $this->__('Shipment type');?></label>
                 <select id="tig_myparcel_shipment_type" name="tig_myparcel[shipment_type]">
