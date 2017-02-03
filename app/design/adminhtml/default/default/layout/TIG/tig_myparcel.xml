@@ -68,7 +68,7 @@
         </reference>
     </adminhtml_sales_order_address>
 
-    <adminhtml_sales_order_index>
+    <!--<adminhtml_sales_order_index>
         <reference name="head">
             <action method="addItem">
                 <type>js_css</type>
@@ -83,7 +83,7 @@
                    name="tig_myparcel_order_index"
                    template="TIG/MyParcel2014/sales/order/mass_actions.phtml"/>
         </reference>
-    </adminhtml_sales_order_index>
+    </adminhtml_sales_order_index>-->
 
     <adminhtml_sales_order_view>
         <reference name="head">
